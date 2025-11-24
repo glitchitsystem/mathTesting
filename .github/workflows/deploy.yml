@@ -20,6 +20,10 @@ jobs:
           server-dir: /learn.glitchitsystem.com/public_html/mathTesting/
           protocol: ftp
           log-level: standard
-          dangerous-clean-slate: true
+          dangerous-clean-slate: false
           timeout: 30000
           port: 21
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
