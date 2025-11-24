@@ -1,0 +1,14 @@
+Acceptance Criteria for the "Math 0.2" Web Page.
+
+Webpage URL: http://glitchitsystem.com/mathTesting/math1
+
+1. Webpage loads without any errors.
+2. Webpage tab title is "Math 1.0"
+3. Heading is "Simple Math Calculator"
+4. Body text is "Select what you want to calculate"
+5. Arithmetic problem is correct based on selection.
+6. Numbers are bordered.
+7. Button text changes based on selection.
+8. Pressing button will solve the problem.
+9. Math problem answer is always correct.
+10. Design Matches Mockup.

@@ -1,0 +1,25 @@
+name: Deploy Website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to FTP (Main Site)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /learn.glitchitsystem.com/public_html/mathTesting/
+          protocol: ftp
+          log-level: standard
+          dangerous-clean-slate: true
+          timeout: 30000
+          port: 21

@@ -1,0 +1,14 @@
+Acceptance Criteria for the "Math 0.2" Web Page.
+
+Webpage URL: http://learn.glitchitsystem.com/mathTesting/math02
+
+1. Webpage loads without any errors.
+2. Webpage tab title is "Math 0.2"
+3. Heading is "This is Addition!"
+4. Body text is "Add numbers together. Enter 2 numbers and we will calculate the answer."
+5. Arithmetic problem is always addition.
+6. Numbers are bordered.
+7. Button text is "Add It".
+8. Pressing button will add the numbers together.
+9. Math problem answer is always correct.
+10. Design Matches Mockup.

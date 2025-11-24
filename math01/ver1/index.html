@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math 1.0</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e8e8e8;
+        padding: 60px 20px;
+      }
+
+      .container {
+        text-align: right;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #000;
+        font-weight: normal;
+        text-align: right;
+      }
+
+      p {
+        font-size: 0.9em;
+        color: #000;
+        margin-bottom: 40px;
+        text-align: right;
+      }
+
+      .math-problem {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+        font-size: 1.2em;
+      }
+
+      .number {
+        min-width: 80px;
+        text-align: center;
+        font-weight: normal;
+      }
+
+      .operator-box {
+        border: 3px solid #000;
+        padding: 15px 30px;
+        text-align: center;
+        font-weight: normal;
+        min-width: 120px;
+      }
+
+      .operator {
+        font-weight: normal;
+        font-size: 1em;
+      }
+
+      button {
+        background-color: #707070;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100%;
+        margin-top: 30px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #5a5a5a;
+      }
+
+      button:active {
+        background-color: #4a4a4a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>This is Arithmatic!</h1>
+      <p>
+        The porpose of this site is to display a random basic aritthmatic
+        problem.
+      </p>
+
+      <div class="math-problem">
+        <div class="number" id="num1">1</div>
+        <div class="operator-box">
+          <div class="operator" id="operator">+</div>
+        </div>
+        <div class="number" id="num2">1</div>
+        <div class="operator-box">
+          <div class="operator">=</div>
+        </div>
+        <div class="number" id="answer">2</div>
+      </div>
+
+      <button id="newProblemBtn">Random Problem</button>
+    </div>
+
+    <script>
+      function generateNewProblem() {
+        // Generate two random numbers (0-10 for simple problems)
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+
+        // Bug: If numbers are the same, concatenate instead of add
+        let answer;
+        if (num1 === num2) {
+          answer = parseInt(String(num1) + String(num2));
+        } else {
+          answer = num1 + num2;
+        }
+
+        // Update the display
+        document.getElementById("num1").textContent = num1;
+        document.getElementById("num2").textContent = num2;
+        document.getElementById("answer").textContent = answer;
+      }
+
+      // Generate initial problem on page load
+      generateNewProblem();
+
+      // Add event listener to button
+      document
+        .getElementById("newProblemBtn")
+        .addEventListener("click", generateNewProblem);
+    </script>
+  </body>
+</html>
